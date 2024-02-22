@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "carlosjoo.language-stylus-plus",
+    "esbenp.prettier-vscode",
+    "pkief.material-icon-theme"
+  ]
+}

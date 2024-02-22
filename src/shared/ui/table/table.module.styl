@@ -1,0 +1,53 @@
+@import "../../base-style.styl"		
+
+.table__viewport
+	background-color COLOR_SECONDARY
+	width 100%
+	height 100%
+	overflow-x: auto 
+	ui_scrollbar()
+	table
+		table-layout: fixed;
+		height min-content
+		
+		> tbody,thead
+			ui_scrollbar()
+			display: block;
+			width: min-content;
+			overflow: hidden
+
+
+			>tr
+				width: min-content;
+				overflow: hidden
+				display: block;
+				>td
+					overflow: hidden
+
+					// box-sizing: border-box
+					ui_text-size(l)
+					background-color COLOR_BACKGROUND_LIGHTER
+					border-top 1px solid COLOR_SECONDARY
+					&:not(:first-child)
+						border-left 1px solid COLOR_SECONDARY
+
+		> tbody
+			// height: 100%
+			max-height: 50vh
+			border-bottom:  1px solid COLOR_SECONDARY
+			overflow-y: auto;
+
+		> thead
+			> tr
+				width: min-content;
+
+				display: block;
+				>th
+					ui_text-weight(bold)
+					ui_text-size(l)
+
+		// Add to js
+		th, td
+			padding: 5px;
+			text-align: left;
+			// width: 120px;

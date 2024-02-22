@@ -13,7 +13,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
+    /* Types*/
+    // TODO Зачем он нужен если и без него типы тянет?
+    "typeRoots": ["node_modules/@types", "types/"],
+    // "typeRoots": [],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -24,18 +27,16 @@
     "baseUrl": ".",
     "paths": {
       // "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
       "@public/*": ["public/*"],
       "@app": ["src/app"],
       "@pages/*": ["src/pages/*"],
       "@widgets/*": ["src/widgets/*"],
       "@features/*": ["src/features/*"],
       "@entities/*": ["src/entities/*"],
-      "@shared/*": ["src/shared/*"],
+      "@shared/*": ["src/shared/*"]
     }
   },
 
-  "include": ["src", "types/vite-env.d.ts"],
+  "include": ["src", "types/", "index.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

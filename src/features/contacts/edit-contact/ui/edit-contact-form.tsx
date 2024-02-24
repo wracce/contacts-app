@@ -1,0 +1,78 @@
+import { useState } from "react"
+
+import {
+  ContactsPartForm,
+  ContactsPartFormData,
+  pushContact,
+  updateContact,
+  useContact,
+} from "@entities/contacts"
+import { Contact } from "@entities/contacts/model/types/contact"
+import { Gender } from "@entities/contacts/model/types/gender"
+
+import { useAppDispatch } from "@shared/model/hooks/store-hooks"
+import { Button, Typography } from "@shared/ui"
+
+import { DeleteContactButton } from ".."
+import css from "./edit-contact-form.module.styl"
+
+type Prop = {
+  onEdited?: (() => void) | undefined
+  id: number
+}
+
+export const EditContactForm = ({ onEdited, id }: Prop) => {
+  const appDispatch = useAppDispatch()
+  const contact = useContact(id)
+  const [valid, setValid] = useState(true)
+
+  if (contact === undefined) return
+
+  function handleInvalid(e: React.FormEvent<HTMLFormElement>) {
+    setValid(e.currentTarget.checkValidity())
+  }
+
+  function handleSubmitForm(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    const formData = new FormData(e.target as HTMLFormElement)
+    const contact: Contact = {
+      id,
+      email: formData.get("email") as string,
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      gender: Gender[formData.get("gender") as keyof typeof Gender],
+    }
+
+    appDispatch(updateContact(contact))
+    onEdited?.()
+  }
+
+  const defaultData: ContactsPartFormData = {
+    email: contact.email,
+    firstName: contact.firstName,
+    lastName: contact.lastName,
+    gender: contact.gender,
+  }
+
+  return (
+    <form
+      className={css.contacts__form}
+      onSubmit={handleSubmitForm}
+      onInvalid={handleInvalid}
+    >
+      <ContactsPartForm defaultData={defaultData}></ContactsPartForm>
+      {!valid && (
+        <Typography variant="error">
+          *Некоторые поля заполнены не корректно
+        </Typography>
+      )}
+      <div className={css.form__buttons}>
+        <DeleteContactButton id={id} />
+        <Button type="submit" width="549px">
+          Редактировать
+        </Button>
+      </div>
+    </form>
+  )
+}

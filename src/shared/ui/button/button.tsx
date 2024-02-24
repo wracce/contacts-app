@@ -4,7 +4,7 @@ import css from "./button.module.styl"
 
 type Props = {
   children: React.ReactNode
-  size?: "m" | "l"
+  size?: "m" | "l" | "s"
   variant?: "primary" | "secondary" | "info"
   width?: string | undefined
   onClick?: () => void | undefined
@@ -17,7 +17,7 @@ export const Button = ({
   variant = "primary",
   width,
   onClick,
-  type = "button"
+  type = "button",
 }: Props) => {
   const css_size = `button--size_${size}`
   const css_variant = `button--variant_${variant}`

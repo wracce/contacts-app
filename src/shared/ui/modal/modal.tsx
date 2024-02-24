@@ -1,8 +1,8 @@
 import ReactModal from "react-modal"
 
 import { Icon } from ".."
+import { State } from "./hooks/useModalReducer"
 import css from "./modal.module.styl"
-import { State } from "./useModalReducer"
 
 ReactModal.setAppElement("#root")
 

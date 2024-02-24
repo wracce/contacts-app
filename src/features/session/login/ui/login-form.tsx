@@ -1,23 +1,28 @@
 import { useState } from "react"
 
 import { useGenerateMutation } from "@shared/api/randomuser-api"
-import { Button, TextField } from "@shared/ui"
+import { Button, TextField, Typography } from "@shared/ui"
 
 export const LoginForm = () => {
   const [login] = useGenerateMutation()
   const [seed, setSeed] = useState("")
+  const [valid, setValid] = useState(true)
 
-  const handleChangeSeed = (event: React.ChangeEvent<HTMLInputElement>) => {
+  function handleChangeSeed(event: React.ChangeEvent<HTMLInputElement>) {
     setSeed(event.target.value)
   }
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     login(seed)
   }
 
+  function handleInvalid(e: React.FormEvent<HTMLFormElement>) {
+    setValid(e.currentTarget.checkValidity())
+  }
+
   return (
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin} onInvalid={handleInvalid}>
       <TextField
         name="seed"
         label="Seed"
@@ -25,6 +30,9 @@ export const LoginForm = () => {
         pattern="[a-zA-Z]+"
         patternTitle="Только буквы латинского алфавита"
       />
+      {!valid && (
+        <Typography variant="error">*Поле заполнено не корректно</Typography>
+      )}
       <Button size="l" variant="primary" width="318px" type="submit">
         Войти
       </Button>

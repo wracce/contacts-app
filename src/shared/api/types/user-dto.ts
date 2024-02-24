@@ -5,7 +5,4 @@ export type UserDto = {
   }
   email: string
   gender: string
-  login: {
-    uuid: string
-  }
 }

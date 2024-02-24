@@ -1,14 +1,18 @@
-@import "../../base-style.styl"
+@import '../../base-style.styl'
 
 .root
+  &--h1
+    ui_text-weight(bold)
+    ui_text-size(xxxl)
+    margin SPACE_S
 
-    &--h1
-        ui_text-weight(bold)
-        ui_text-size(xxxl)
-        margin: SPACE_S
-
-    &--h2
-        ui_text-weight(bold)
-        ui_text-size(xxl)
-        margin: SPACE_S
-
+  &--h2
+    ui_text-weight(bold)
+    ui_text-size(xxl)
+    margin SPACE_S
+  &--error
+    display block
+    color COLOR_DANGER
+    ui_text-weight(normal)
+    ui_text-size(s)
+    margin SPACE_S SPACE_S SPACE_M SPACE_S

@@ -1,31 +1,37 @@
-@import '../../base-style.styl';
+@import '../../base-style.styl'
 
-.button {
-	border-width: 0;
-	ui_rounded(s)
-	ui_text-weight(bold);
-	margin: 8px;
-	box-sizing: border-box;
-	display: inline-block;
-
-	&--variant_primary {
-		background-image: COLOR_PRIMARY_GRADIENT;
-		color: COLOR_ON_DARK;
-	}
+.button
+  border-width 0
+  ui_rounded(s)
+  ui_text-weight(bold)
+  margin 8px
+  box-sizing border-box
+  display inline-block
 
 
-	&--variant_secondary {
-		background-color: COLOR_PRIMARY_SECONDARY;
-		color: COLOR_ON_LIGHT;
-	}
 
-	&--size_m {
-		ui_text-size(m);
-		padding: 3px 11px;
-	}
+  &--variant_primary
+    background-image COLOR_PRIMARY_GRADIENT
+    color COLOR_ON_DARK
 
-	&--size_l {
-		ui_text-size(l);
-		padding: 11px 20px;
-	}
-}
+    &:hover
+      background-image COLOR_PRIMARY_GRADIENT_LIGHTEN
+
+
+  &--variant_secondary
+    background-color COLOR_SECONDARY
+    color COLOR_ON_LIGHT
+    &:hover
+      background-color COLOR_SECONDARY_LIGHTEN
+
+  &--size_s
+    ui_text-size(l)
+    padding 10px 10px
+
+  &--size_m
+    ui_text-size(m)
+    padding 3px 11px
+
+  &--size_l
+    ui_text-size(l)
+    padding 11px 20px

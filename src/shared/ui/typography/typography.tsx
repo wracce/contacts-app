@@ -4,7 +4,7 @@ import css from "./typography.module.styl"
 
 type Props = {
   children: React.ReactNode
-  variant?: "h1" | "h2" | undefined
+  variant?: "h1" | "h2" | "error" | undefined
   className?: string | undefined
   align?:
     | "start"
@@ -39,12 +39,12 @@ export const Typography = ({ children, variant, className, align }: Props) => {
       )
     case "error":
       return (
-        <h2
-          className={cn(css.root, css["root--h2"], className)}
+        <strong
+          className={cn(css.root, css["root--error"], className)}
           style={{ textAlign: align }}
         >
           {children}
-        </h2>
+        </strong>
       )
 
     default:

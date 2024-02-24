@@ -1,7 +1,12 @@
+LIGHTEN_AMOUNT = 10
+
 /* COLORS */
 COLOR_PRIMARY = #00A5EE
+COLOR_PRIMARY_LIGHTEN = #00A5EE
 COLOR_PRIMARY_GRADIENT = linear-gradient(127.12deg, #00EAF9 -13.37%, #00BDF9 96.31%)
+COLOR_PRIMARY_GRADIENT_LIGHTEN = linear-gradient(127.12deg, lighten(#00EAF9,LIGHTEN_AMOUNT) -13.37%, lighten(#00BDF9,LIGHTEN_AMOUNT) 96.31%)
 COLOR_SECONDARY = #F2F2F7
+COLOR_SECONDARY_LIGHTEN = lighten(COLOR_SECONDARY, 2)
 COLOR_INFO = #AEAEB2
 COLOR_INFO_LIGHTER = #E5E5EA
 COLOR_DANGER = #FF0000
@@ -80,6 +85,9 @@ ui_scrollbar()
     box-shadow 1px 2px 17px 0px #0000000D
     background COLOR_PRIMARY_GRADIENT
     border-radius 8px
+    &:hover {
+			background-image: COLOR_PRIMARY_GRADIENT_LIGHTEN
+		}
 
   &::-webkit-scrollbar-corner
     background: transparent

@@ -8,5 +8,5 @@ type Props = {
 }
 
 export const Card = ({ children, className }: Props) => {
-  return <div className={cn(css.root, className)}>{children}</div>
+  return <div className={cn(css.card__container, className)}>{children}</div>
 }

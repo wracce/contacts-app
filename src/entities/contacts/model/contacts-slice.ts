@@ -1,8 +1,10 @@
+import { mapContacts } from "../lib/map-contacts"
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-import { randomuserApi } from "../../../shared/api/randomuser-api"
+import { randomuserApi } from "@shared/api/randomuser-api"
+
 import { calculateNewContactId } from "../lib/calculate-new-contact-id"
-import { mapContacts } from "../lib/map-contacts"
+
 import { Contact } from "./types/contact"
 
 type StateType = {
@@ -38,9 +40,6 @@ export const contactsSlice = createSlice({
       .addMatcher(
         randomuserApi.endpoints.generate.matchFulfilled,
         (state, { payload }) => {
-          // TODO Через присвоение не работает
-          // state.length = 0
-          // state.push(...mapContacts(payload))
           state.contacts = mapContacts(payload)
         },
       ),

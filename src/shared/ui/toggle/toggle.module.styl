@@ -2,20 +2,23 @@
 
 
 .toggle__list
-  background-color COLOR_SECONDARY
   ui_rounded(m)
+  background-color COLOR_SECONDARY
   padding 3px
   width max-content
+
   > .toggle__button
-    background-color COLOR_SECONDARY
-    color COLOR_ON_SECONDARY
-    border-width 0
     ui_text-size(l)
     ui_text-weight(bold)
     ui_rounded(s)
+    background-color COLOR_SECONDARY
+    color COLOR_ON_SECONDARY
+    border-width 0
     padding 6px 50px
+
     &:hover
       background-color COLOR_SECONDARY_LIGHTEN
+
     &[disabled]
       color COLOR_ON_LIGHT
       background-color COLOR_BACKGROUND_LIGHTER

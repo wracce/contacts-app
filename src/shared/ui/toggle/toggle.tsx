@@ -28,7 +28,7 @@ export const Toggle = ({
       {data.map((tgl) => (
         <button
           type="button"
-          key={tgl.value as string}
+          key={tgl.value}
           disabled={value === tgl.value}
           className={css.toggle__button}
           onClick={() => {

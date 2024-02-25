@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-import { clearSession } from "@entities/session/model/session-slice"
+import { clearSession } from "@entities/session"
 
 import { routeNames } from "@shared/lib/route-names"
 import { useAppDispatch } from "@shared/model/hooks/store-hooks"

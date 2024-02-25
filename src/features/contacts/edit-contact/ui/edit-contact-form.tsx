@@ -1,9 +1,9 @@
+import { DeleteContactButton } from ".."
 import { useState } from "react"
 
 import {
   ContactsPartForm,
   ContactsPartFormData,
-  pushContact,
   updateContact,
   useContact,
 } from "@entities/contacts"
@@ -13,7 +13,6 @@ import { Gender } from "@entities/contacts/model/types/gender"
 import { useAppDispatch } from "@shared/model/hooks/store-hooks"
 import { Button, Typography } from "@shared/ui"
 
-import { DeleteContactButton } from ".."
 import css from "./edit-contact-form.module.styl"
 
 type Prop = {
@@ -36,6 +35,7 @@ export const EditContactForm = ({ onEdited, id }: Prop) => {
     e.preventDefault()
 
     const formData = new FormData(e.target as HTMLFormElement)
+    // TODO вынести в lib
     const contact: Contact = {
       id,
       email: formData.get("email") as string,
@@ -57,7 +57,7 @@ export const EditContactForm = ({ onEdited, id }: Prop) => {
 
   return (
     <form
-      className={css.contacts__form}
+      className={css["contacts__edit-contact-form"]}
       onSubmit={handleSubmitForm}
       onInvalid={handleInvalid}
     >
@@ -67,7 +67,7 @@ export const EditContactForm = ({ onEdited, id }: Prop) => {
           *Некоторые поля заполнены не корректно
         </Typography>
       )}
-      <div className={css.form__buttons}>
+      <div className={css["contacts__delete-contact"]}>
         <DeleteContactButton id={id} />
         <Button type="submit" width="549px">
           Редактировать

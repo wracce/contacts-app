@@ -21,7 +21,7 @@ const guestRoutes: RouteObject[] = [
 
 // For Everybody
 const otherRoutes: RouteObject[] = [
-  { path: "/", element: <Navigate to={`${routeNames.contacts}`} replace /> },
+  { path: "/", element: <Navigate to={routeNames.contacts} replace /> },
 ]
 
 export const appRouter = createBrowserRouter([

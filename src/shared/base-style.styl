@@ -1,10 +1,8 @@
-LIGHTEN_AMOUNT = 10
-
-/* COLORS */
+ /* COLORS */
 COLOR_PRIMARY = #00A5EE
 COLOR_PRIMARY_LIGHTEN = #00A5EE
 COLOR_PRIMARY_GRADIENT = linear-gradient(127.12deg, #00EAF9 -13.37%, #00BDF9 96.31%)
-COLOR_PRIMARY_GRADIENT_LIGHTEN = linear-gradient(127.12deg, lighten(#00EAF9,LIGHTEN_AMOUNT) -13.37%, lighten(#00BDF9,LIGHTEN_AMOUNT) 96.31%)
+COLOR_PRIMARY_GRADIENT_LIGHTEN = linear-gradient(127.12deg, lighten(#00EAF9,10) -13.37%, lighten(#00BDF9,10) 96.31%)
 COLOR_SECONDARY = #F2F2F7
 COLOR_SECONDARY_LIGHTEN = lighten(COLOR_SECONDARY, 2)
 COLOR_INFO = #AEAEB2
@@ -21,73 +19,73 @@ SPACE_S = 0.5em /* 8px */
 SPACE_M = 1em /* 16px */
 
 ui_text-weight(weight)
-  w = 400
-  if weight is normal
-    w = 400
-  if weight is bold
-    w = 500
-  font-weight w
+	w = 400
+	if weight == normal
+		w = 400
+	if weight == bold
+		w = 500
+	font-weight w
 
 ui_text-size(size)
-  fs = 0px
-  ls = 0px
-  if size is s
-    /* 12px */
-    fs = 0.75rem
-    /* 12px */
-    ls = 0.75rem
-  if size is m
-    /* 12px */
-    fs = 0.75rem
-    /* 16px */
-    ls = 1rem
-  if size is l
-    /* 16px */
-    fs = 1rem
-    /* 24px */
-    ls = 1.5rem
-  if size is xl
-    /* 20px */
-    fs = 1.25rem
-    /* 24px */
-    ls = 1.5rem
-  if size is xxl
-    /* 28px */
-    fs = 1.75rem
-    /* 32px */
-    ls = 2rem
-  if size is xxxl
-    /* 32px */
-    fs = 2rem
-    /* 32px */
-    ls = 2rem
-  font-size fs
-  line-height ls
+	fs = 0px
+	ls = 0px
+	if size == s
+		/* 12px */
+		fs = 0.75rem
+		/* 12px */
+		ls = 0.75rem
+	if size == m
+		/* 12px */
+		fs = 0.75rem
+		/* 16px */
+		ls = 1rem
+	if size == l
+		/* 16px */
+		fs = 1rem
+		/* 24px */
+		ls = 1.5rem
+	if size == xl
+		/* 20px */
+		fs = 1.25rem
+		/* 24px */
+		ls = 1.5rem
+	if size == xxl
+		/* 28px */
+		fs = 1.75rem
+		/* 32px */
+		ls = 2rem
+	if size == xxxl
+		/* 32px */
+		fs = 2rem
+		/* 32px */
+		ls = 2rem
+	font-size fs
+	line-height ls
 
 ui_rounded(size)
-  val = 0px
-  if size is s
-    val = 8px
-  if size is m
-    val = 10px
-  if size is l
-    val = 16px
-  if size is xl
-    val = 24px
-  border-radius val
+	val = 0px
+	if size == s
+		val = 8px
+	if size == m
+		val = 10px
+	if size == l
+		val = 16px
+	if size == xl
+		val = 24px
+	border-radius val
 
 ui_scrollbar()
-  &::-webkit-scrollbar
-    width 5px
-    height 5px
+	&::-webkit-scrollbar
+		width 5px
+		height 5px
 
-  &::-webkit-scrollbar-thumb
-    box-shadow 1px 2px 17px 0px #0000000D
-    background COLOR_PRIMARY_GRADIENT
-    border-radius 8px
-    &:hover {
+	&::-webkit-scrollbar-thumb
+		box-shadow 1px 2px 17px 0px #0000000D
+		background COLOR_PRIMARY_GRADIENT
+		border-radius 8px
+
+		&:hover
 			background-image: COLOR_PRIMARY_GRADIENT_LIGHTEN
-		}
 
-  &::-webkit-scrollbar-corner
-    background: transparent
+	&::-webkit-scrollbar-corner
+		background: transparent

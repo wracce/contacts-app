@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router-dom"
 
 import { appRouter } from "./app-router"
 import { appStore } from "./app-store"
+
 import "./app-style.styl"
 
 export const App = () => {

@@ -1,21 +1,11 @@
-import cn from "classnames"
+import { TableColumnProp } from "./types/table-column-prop"
+import { TableDataProp } from "./types/table-data-prop"
 
 import css from "./table.module.styl"
 
-export type TableColumnProps = {
-  name: string
-  width: number
-  value: React.ReactNode
-  align: "left" | "center" | "right"
-}
-
-export type TableDataProps = {
-  [key: string]: React.ReactNode
-}
-
 type Props = {
-  columns: Array<TableColumnProps>
-  data: Array<TableDataProps>
+  columns: Array<TableColumnProp>
+  data: Array<TableDataProp>
   idColumnName: string
 }
 
@@ -30,11 +20,12 @@ export const Table = ({ columns = [], data = [], idColumnName }: Props) => {
 
   return (
     <div className={css.table__viewport}>
-      <table className={css.fixed_column} cellSpacing="0">
+      <table className={css.table__table} cellSpacing="0">
         <thead className={css.table__head}>
-          <tr>
+          <tr className={css.table__row}>
             {columns.map((col) => (
               <th
+                className={css["table__head-cell"]}
                 key={col.name}
                 style={{
                   minWidth: `${col.width}px`,
@@ -47,16 +38,17 @@ export const Table = ({ columns = [], data = [], idColumnName }: Props) => {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className={css.table__body}>
           {data.map((row) => {
             const rowKey = row[idColumnName] as string
             return (
-              <tr key={rowKey}>
+              <tr key={rowKey} className={css.table__row}>
                 {columns.map((col) => {
                   const cellKey = col.name + rowKey
                   return (
                     <td
                       key={cellKey}
+                      className={css["table__body-cell"]}
                       style={{
                         minWidth: `${col.width}px`,
                         maxWidth: `${col.width}px`,

@@ -1,0 +1,20 @@
+{
+  "material-icon-theme.activeIconPack": "react_redux",
+  "material-icon-theme.folders.associations": {
+    "ui": "theme",
+    "entities": "container",
+    "features": "utils",
+    "layout": "",
+    "icon": ""
+  },
+  "languageStylus.variablesFilePath": "/src/shared/base-style.styl",
+  "cSpell.words": [
+    "fontsource",
+    "Parens",
+    "randomuser",
+    "reduxjs",
+    "styl",
+    "trivago",
+    "VITE"
+  ]
+}

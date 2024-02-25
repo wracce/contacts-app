@@ -6,7 +6,10 @@
   "semi": false,
   "trailingComma": "all",
   "arrowParens": "always",
-  "plugins": ["prettier-plugin-stylus", "@trivago/prettier-plugin-sort-imports"],
+  "plugins": [
+    "prettier-plugin-stylus",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^@app/(.*)$",
@@ -17,7 +20,9 @@
     "^@shared/(.*)$",
     "^@server/(.*)$",
     "^@ui/(.*)$",
-    "^[./]"
+    "^../(.*)[^(.styl|.css)]",
+    "^./(.*)[^(.styl|.css)]",
+    "^./(.*)(.styl|.css)$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

@@ -25,6 +25,7 @@ export const AddContactForm = ({ onAdded }: Prop) => {
     e.preventDefault()
 
     const formData = new FormData(e.target as HTMLFormElement)
+    // TODO вынести в lib
     const contact: Contact = {
       id: null,
       email: formData.get("email") as string,
@@ -39,7 +40,7 @@ export const AddContactForm = ({ onAdded }: Prop) => {
 
   return (
     <form
-      className={css.contacts__form}
+      className={css["contacts__add-contact-form"]}
       onSubmit={handleSubmitForm}
       onInvalid={handleInvalid}
     >

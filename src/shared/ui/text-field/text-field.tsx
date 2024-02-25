@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute, useId, useState } from "react"
+import { HTMLInputTypeAttribute, useId } from "react"
 
 import css from "./text-field.module.styl"
 
@@ -24,12 +24,11 @@ export const TextField = ({
   patternTitle,
 }: Props) => {
   const id = useId()
-  // const [invilid, setInvalid] = useState(false)
   return (
-    <div className={css.wrapper}>
-      <label htmlFor={id} className={css["inp"]}>
+    <div className={css.input__wrapper}>
+      <label htmlFor={id} className={css.input__content}>
         <input
-          // onInvalid={}
+          className={css.input__textfield}
           defaultValue={defaultValue}
           required={required}
           name={name}
@@ -40,7 +39,7 @@ export const TextField = ({
           pattern={pattern}
           title={patternTitle}
         />
-        <span className={css["label"]}>{label}</span>
+        <span className={css.input__span}>{label}</span>
       </label>
     </div>
   )

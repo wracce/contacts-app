@@ -15,8 +15,8 @@
     "jsx": "react-jsx",
     /* Types*/
     // TODO Зачем он нужен если и без него типы тянет?
-    // "typeRoots": ["node_modules/@types", "types/"],
-    "typeRoots": [],
+    "typeRoots": ["node_modules/@types", "types/"],
+    // "typeRoots": [],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

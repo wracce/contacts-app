@@ -1,14 +1,15 @@
+import { Icon } from ".."
 import ReactModal from "react-modal"
 
-import { Icon } from ".."
-import { State } from "./hooks/useModalReducer"
+import { ModalState } from "./hooks/useModalReducer"
+
 import css from "./modal.module.styl"
 
 ReactModal.setAppElement("#root")
 
 type Props = {
   header: string
-  isOpen: State
+  isOpen: ModalState
   onRequestClose: () => void
   children: React.ReactNode
 }

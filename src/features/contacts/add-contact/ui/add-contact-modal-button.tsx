@@ -1,8 +1,7 @@
 import { Button, Modal, useModalReducer } from "@shared/ui"
 
-import { AddContactForm } from ".."
+import { AddContactForm } from "./add-contact-form"
 
-// type Props = {}
 export const AddContactModalButton = () => {
   const [isShowModal, modalDispatch] = useModalReducer()
 

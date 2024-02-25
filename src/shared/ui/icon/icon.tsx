@@ -1,15 +1,13 @@
 import close24IconSrc from "@public/icons/24/close.png"
 import trash24IconSrc from "@public/icons/24/trash.png"
-
-export type IconTypeProps = "empty" | "close"
-export type IconSizeProps = "24px"
+import { IconSizeProp, IconTypeProp } from "./types"
 
 type Props = {
-  type: IconTypeProps
-  size?: IconSizeProps | undefined
+  type: IconTypeProp
+  size?: IconSizeProp | undefined
 }
 
-function getIconSrc(type: IconTypeProps, size: IconSizeProps = "24px") {
+function getIconSrc(type: IconTypeProp, size: IconSizeProp = "24px") {
   if (size === "24px") {
     switch (type) {
       case "close":
@@ -21,5 +19,7 @@ function getIconSrc(type: IconTypeProps, size: IconSizeProps = "24px") {
 }
 
 export const Icon = ({ type, size }: Props) => {
-  return <img width={size} height={size} src={getIconSrc(type, size)} />
+  return (
+    <img alt={type} width={size} height={size} src={getIconSrc(type, size)} />
+  )
 }

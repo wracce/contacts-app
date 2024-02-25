@@ -1,14 +1,14 @@
 import { useReducer } from "react"
 
-export interface State {
+export interface ModalState {
   isShow: boolean
 }
 
 type ModalAction = { type: "show" } | { type: "close" }
 
-const initialState: State = { isShow: false }
+const initialState: ModalState = { isShow: false }
 
-function modalReducer(state: State, action: ModalAction): State {
+function modalReducer(_state: ModalState, action: ModalAction): ModalState {
   switch (action.type) {
     case "show":
       return { isShow: true }

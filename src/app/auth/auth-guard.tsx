@@ -14,7 +14,7 @@ export const AuthGuard = () => {
     if (seed && !isAuth) update(seed)
   }, [isAuth, seed, update])
 
-  if (!seed) return <Navigate to={`${routeNames.login}`} />
+  if (!seed) return <Navigate to={routeNames.login} />
 
   return <Outlet></Outlet>
 }

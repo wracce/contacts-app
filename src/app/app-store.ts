@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 
 import { contactsSlice } from "@entities/contacts"
-import { sessionSlice } from "@entities/session/model/session-slice"
+import { sessionSlice } from "@entities/session"
 
 import { baseApi } from "@shared/api/base-api"
 

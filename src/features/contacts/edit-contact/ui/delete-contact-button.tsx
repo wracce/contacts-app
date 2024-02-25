@@ -10,7 +10,6 @@ export const DeleteContactButton = ({ id }: Props) => {
 
   function handleDelete() {
     appDispatch(deleteContact(id))
-    console.log(id)
   }
 
   return (

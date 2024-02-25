@@ -1,6 +1,6 @@
 import { Button, Modal, useModalReducer } from "@shared/ui"
 
-import { EditContactForm } from ".."
+import { EditContactForm } from "./edit-contact-form"
 
 type Props = {
   id: number
@@ -22,7 +22,7 @@ export const EditContactModalButton = ({ id }: Props) => {
         Редактировать
       </Button>
       <Modal
-        header="Новый пользователь"
+        header="Редактирование пользователя"
         isOpen={isShowModal}
         onRequestClose={closeModal}
       >

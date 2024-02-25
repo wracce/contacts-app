@@ -1,7 +1,9 @@
+import { Gender } from ".."
+
 import { TextField, Toggle } from "@shared/ui"
 
-import { Gender } from ".."
 import { ContactsPartFormData } from "../model/types/contacts-part-form-data"
+
 import css from "./contacts-part-form.module.styl"
 
 type Props = {

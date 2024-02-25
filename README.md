@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# Контакты - CRUD на основе Randomuser.me
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение учета контактов с примером Rest запроса. Пример применения React, RTK и методологии FSD
 
-Currently, two official plugins are available:
+<p align="center">
+    <img height="32%" src="public/preview/preview.gif" />
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ## Попробовать
+[WEB](https://wracce.github.io/contacts-app)
 
-## Expanding the ESLint configuration
+## Возможности
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+⚡ Вход по Seed
 
-- Configure the top-level `parserOptions` property like this:
+⚡ Сохранение Seed в LocalStorage
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-}
+⚡ Получение пользователей с сервера
+
+⚡ Добавление / Редактирование / Удаление контактов (без сервера)
+
+ ## Скриншоты
+ 
+<p align="center">
+    <img width="25%" src="public/preview/preview1.png" />
+    <img width="25%" src="public/preview/preview2.png" />
+    <img width="25%" src="public/preview/preview3.png" />
+    <img width="25%" src="public/preview/preview4.png" />
+</p>
+
+## Стек технологий
+
+ * Vite, npm
+ * TypeScript, Stylus
+ * React, Redux, Redux Toolkit, RTK Query
+ * Roboto
+ * React-router, react-modal, classnames
+ * Eslint, Prettier
+ * FSD, BEM, SOLID
+
+## Сборка / Запуск
+
+1. Установка зависимостей
+
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Запуск проекта
+
+```bash
+npm run dev
+```
+
+3. Сборка проекта
+
+```bash
+npm run build
+```
+
+## Лицензия
+MIT license

@@ -1,6 +1,6 @@
 # Контакты - CRUD на основе Randomuser.me
 
-Приложение учета контактов с примером Rest запроса. Пример применения React, RTK и методологии FSD
+WEB Приложение учета контактов с примером Rest запроса на Randomuser.me. Пример применения React, RTK и методологии FSD.
 
 <p align="center">
     <img width="40%" src="public/preview/preview.gif" />
@@ -22,10 +22,10 @@
  ## Скриншоты
  
 <p align="center">
-    <img width="50%" src="public/preview/preview1.png" />
-    <img width="50%" src="public/preview/preview2.png" />
-    <img width="50%" src="public/preview/preview3.png" />
-    <img width="50%" src="public/preview/preview4.png" />
+    <img width="48%" src="public/preview/preview1.png" />
+    <img width="48%" src="public/preview/preview2.png" />
+    <img width="48%" src="public/preview/preview3.png" />
+    <img width="48%" src="public/preview/preview4.png" />
 </p>
 
 ## Стек технологий

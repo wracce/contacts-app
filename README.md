@@ -3,7 +3,7 @@
 Приложение учета контактов с примером Rest запроса. Пример применения React, RTK и методологии FSD
 
 <p align="center">
-    <img height="32%" src="public/preview/preview.gif" />
+    <img width="40%" src="public/preview/preview.gif" />
 </p>
 
  ## Попробовать
@@ -22,10 +22,10 @@
  ## Скриншоты
  
 <p align="center">
-    <img width="25%" src="public/preview/preview1.png" />
-    <img width="25%" src="public/preview/preview2.png" />
-    <img width="25%" src="public/preview/preview3.png" />
-    <img width="25%" src="public/preview/preview4.png" />
+    <img width="50%" src="public/preview/preview1.png" />
+    <img width="50%" src="public/preview/preview2.png" />
+    <img width="50%" src="public/preview/preview3.png" />
+    <img width="50%" src="public/preview/preview4.png" />
 </p>
 
 ## Стек технологий

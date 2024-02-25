@@ -3,6 +3,7 @@
     "dbaeumer.vscode-eslint",
     "carlosjoo.language-stylus-plus",
     "esbenp.prettier-vscode",
-    "pkief.material-icon-theme"
+    "pkief.material-icon-theme",
+    "github.vscode-github-actions"
   ]
 }

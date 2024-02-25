@@ -1,4 +1,4 @@
-import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom"
+import { Navigate, RouteObject, createHashRouter } from "react-router-dom"
 
 import { ContactsPage } from "@pages/contacts/contacts-page"
 import { LoginPage } from "@pages/login/login-page"
@@ -24,7 +24,7 @@ const otherRoutes: RouteObject[] = [
   { path: "/", element: <Navigate to={routeNames.contacts} replace /> },
 ]
 
-export const appRouter = createBrowserRouter([
+export const appRouter = createHashRouter([
   {
     element: appLayout,
     children: [

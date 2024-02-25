@@ -18,7 +18,9 @@ export const AddContactForm = ({ onAdded }: Prop) => {
   const [valid, setValid] = useState(true)
 
   function handleInvalid(e: React.FormEvent<HTMLFormElement>) {
-    setValid(e.currentTarget.checkValidity())
+    // HACK for visivle checkValidity
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setValid((e.target as any).checkValidity())
   }
 
   function handleSubmitForm(e: React.FormEvent<HTMLFormElement>) {
@@ -50,9 +52,11 @@ export const AddContactForm = ({ onAdded }: Prop) => {
           *Некоторые поля заполнены не корректно
         </Typography>
       )}
-      <Button type="submit" width="552px">
-        Сохранить
-      </Button>
+      <div className={css["contacts__form-buttons"]}>
+        <Button type="submit" width="552px">
+          Сохранить
+        </Button>
+      </div>
     </form>
   )
 }

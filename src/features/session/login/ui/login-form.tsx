@@ -18,8 +18,10 @@ export const LoginForm = () => {
   }
 
   function handleInvalid(e: React.FormEvent<HTMLFormElement>) {
-    setValid(e.currentTarget.checkValidity())
-  }
+    // HACK for visivle checkValidity
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setValid((e.target as any).checkValidity())
+ }
 
   return (
     <form onSubmit={handleLogin} onInvalid={handleInvalid}>

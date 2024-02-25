@@ -28,7 +28,9 @@ export const EditContactForm = ({ onEdited, id }: Prop) => {
   if (contact === undefined) return
 
   function handleInvalid(e: React.FormEvent<HTMLFormElement>) {
-    setValid(e.currentTarget.checkValidity())
+    // HACK for visivle checkValidity
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setValid((e.target as any).checkValidity())
   }
 
   function handleSubmitForm(e: React.FormEvent<HTMLFormElement>) {
@@ -67,9 +69,9 @@ export const EditContactForm = ({ onEdited, id }: Prop) => {
           *Некоторые поля заполнены не корректно
         </Typography>
       )}
-      <div className={css["contacts__delete-contact"]}>
+      <div className={css["contacts__form-buttons"]}>
         <DeleteContactButton id={id} />
-        <Button type="submit" width="549px">
+        <Button type="submit" width="486px">
           Редактировать
         </Button>
       </div>
